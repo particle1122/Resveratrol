@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NAD – Resveratrol + Colágeno | Biomorfo</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            biomorfoBg: "#050814",
+            nadPurple: "#6b21a8",
+            nadPurpleSoft: "#a855f7",
+            nadGold: "#facc15",
+            nadLime: "#b6ff2b",
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Glow suave de fondo */
+    @keyframes glowPulse {
+      0% { opacity: .35; transform: scale(.95); }
+      50% { opacity: .9; transform: scale(1.05); }
+      100% { opacity: .35; transform: scale(.95); }
+    }
+    .glow-soft {
+      animation: glowPulse 7s ease-in-out infinite;
+    }
+
+    /* Flotación ligera del card de producto */
+    @keyframes floatSoft {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+    .float-soft {
+      animation: floatSoft 6s ease-in-out infinite;
+    }
+
+    /* Spotlight hover sobre el card */
+    .spotlight {
+      position: relative;
+      overflow: hidden;
+    }
+    .spotlight::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background: radial-gradient(circle, rgba(168,85,247,0.18), transparent 65%);
+      opacity: 0;
+      transition: opacity .4s ease;
+      pointer-events: none;
+    }
+    .spotlight:hover::before {
+      opacity: 1;
+    }
+
+    /* Zoom suave para cards y botones principales */
+    .zoom-soft {
+      transition: transform .5s ease, box-shadow .5s ease, background-color .3s ease;
+    }
+    .zoom-soft:hover {
+      transform: translateY(-4px) scale(1.02);
+    }
+  </style>
+</head>
+
+<body class="bg-biomorfoBg text-white antialiased">
+
+  <!-- HEADER -->
+  <header class="sticky top-0 z-30 border-b border-white/10 bg-black/80 backdrop-blur-xl">
+    <div class="max-w-6xl mx-auto px-4 lg:px-0 flex items-center justify-between h-14">
+      <!-- Logo / Marca -->
+      <div class="flex items-center gap-2">
+        <div class="h-7 w-7 rounded-full border border-white/30 flex items-center justify-center">
+          <div class="h-3 w-3 rounded-full border border-white/60"></div>
+        </div>
+        <span class="text-[11px] tracking-[0.35em] uppercase text-white/70">
+          BIOMORFO
+        </span>
+      </div>
+
+      <!-- Menú desktop -->
+      <nav class="hidden md:flex items-center gap-5 text-[11px] uppercase tracking-[0.18em] text-white/65">
+        <a href="#inicio" class="hover:text-white">Inicio</a>
+        <a href="#problema" class="hover:text-white">Cómo te sientes</a>
+        <a href="#como-ayuda" class="hover:text-white">Cómo ayuda NAD</a>
+        <a href="#transformacion" class="hover:text-white">Resultados</a>
+        <a href="#oferta" class="hover:text-white">Oferta</a>
+        <a href="#testimonios" class="hover:text-white">Testimonios</a>
+        <a href="#seguridad" class="hover:text-white">Seguridad</a>
+      </nav>
+
+      <!-- CTA header (solo desktop) -->
+      <a href="https://wa.me/573014361025"
+         class="hidden md:inline-flex items-center rounded-full bg-nadPurple px-4 py-2 text-[11px] font-semibold shadow-lg hover:bg-nadPurpleSoft zoom-soft">
+        Comprar ahora
+      </a>
+    </div>
+
+    <!-- Hint móvil -->
+    <div class="md:hidden border-t border-white/10 bg-black/70">
+      <div class="max-w-6xl mx-auto px-4 py-2 text-[11px] text-white/65 text-center">
+        Desliza hacia abajo para ver: Cómo te sientes · Cómo ayuda NAD · Oferta · Testimonios
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO NAD -->
+    <section id="inicio" class="relative overflow-hidden">
+      <!-- Fondo fotográfico + overlay -->
+      <div
+        class="absolute inset-0 -z-20 bg-cover bg-center"
+        style="background-image: url('https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1600&q=80');">
+      </div>
+      <div class="absolute inset-0 -z-10 bg-gradient-to-br from-black/90 via-biomorfoBg/95 to-black/90"></div>
+      <div class="absolute -top-40 -right-32 -z-10 h-72 w-72 rounded-full bg-nadPurpleSoft/35 blur-3xl glow-soft"></div>
+      <div class="absolute -bottom-52 -left-32 -z-10 h-80 w-80 rounded-full bg-nadGold/20 blur-3xl glow-soft"></div>
+
+      <div class="max-w-6xl mx-auto px-4 lg:px-0 py-16 lg:py-24">
+        <div class="flex flex-col lg:flex-row items-center gap-14">
+          <!-- Columna texto -->
+          <div class="flex-1 space-y-7 text-center lg:text-left">
+            <p class="text-[12px] tracking-[0.35em] uppercase text-white/60">
+              Adultos activos · Longevidad · Bienestar diario
+            </p>
+
+            <h1 class="text-3xl md:text-5xl lg:text-6xl font-semibold leading-tight">
+              NAD:
+              <span class="block text-nadLime mt-1">menos desgaste hoy</span>
+              para disfrutar más los próximos años.
+            </h1>
+
+            <p class="text-sm md:text-lg text-white/80 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+              Para personas adultas que quieren seguir trabajando, entrenando y compartiendo con su familia
+              con energía y bienestar. NAD combina <strong>Resveratrol, Nicotinamida, Colágeno hidrolizado,
+              Vitamina C y Zinc</strong> para acompañar tu salud celular, articulaciones y piel dentro de un
+              estilo de vida saludable.
+            </p>
+
+            <!-- Oferta + iconos de confianza -->
+            <div class="inline-flex flex-col gap-3 rounded-3xl border border-white/15 bg-black/40 px-5 py-4 shadow-xl backdrop-blur-xl text-left max-w-xl mx-auto lg:mx-0">
+              <div class="flex items-baseline gap-3">
+                <span class="text-sm text-white/60 line-through">70.000 COP</span>
+                <span class="text-3xl md:text-4xl font-bold text-nadLime">59.900 COP</span>
+              </div>
+
+              <div class="flex flex-wrap gap-3 text-[11px] text-white/80">
+                <div class="flex items-center gap-1">
+                  <!-- Icono camión -->
+                  <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none"
+                       stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="7" width="11" height="8" rx="1"></rect>
+                    <path d="M14 9h3.5a1 1 0 0 1 .8.4l2.2 3v2.6H14"></path>
+                    <circle cx="7" cy="17" r="1.2"></circle>
+                    <circle cx="17" cy="17" r="1.2"></circle>
+                  </svg>
+                  <span>Envío GRATIS en Colombia</span>
+                </div>
+
+                <div class="flex items-center gap-1">
+                  <!-- Icono billete -->
+                  <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none"
+                       stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="7" width="18" height="10" rx="1.5"></rect>
+                    <circle cx="12" cy="12" r="2"></circle>
+                  </svg>
+                  <span>Pago contra entrega</span>
+                </div>
+
+                <div class="flex items-center gap-1">
+                  <!-- Icono chat -->
+                  <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none"
+                       stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 5h14v9a2 2 0 0 1-2 2H9l-4 3v-3H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"></path>
+                  </svg>
+                  <span>Acompañamiento por WhatsApp</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- CTA principal -->
+            <div class="flex flex-col items-center lg:items-start gap-2">
+              <a href="https://wa.me/573014361025"
+                 class="inline-flex items-center px-8 py-4 bg-nadPurple rounded-full text-base font-semibold shadow-2xl hover:bg-nadPurpleSoft transform hover:-translate-y-1 zoom-soft">
+                Quiero comprarlo
+              </a>
+              <p class="text-[11px] text-white/60">
+                Te ayudamos a resolver dudas antes de cerrar tu compra.
+              </p>
+            </div>
+          </div>
+
+          <!-- Columna producto -->
+          <div class="flex-1 flex justify-center mt-6 lg:mt-0">
+            <!-- TARJETA DE PRODUCTO MEJORADA -->
+            <div class="w-full max-w-sm rounded-3xl border border-white/15 bg-white/10 backdrop-blur-2xl shadow-2xl p-6 space-y-4 spotlight float-soft">
+
+              <!-- Badge de escasez + INVIMA -->
+              <div class="flex justify-between items-center mb-1">
+                <span class="text-[11px] bg-red-500/80 px-3 py-1 rounded-full text-white font-semibold uppercase tracking-wide">
+                  Quedan pocos
+                </span>
+                <span class="text-[11px] uppercase text-white/70">Registro INVIMA</span>
+              </div>
+
+              <!-- Imagen del producto -->
+              <div class="rounded-2xl overflow-hidden bg-black/40">
+                <img src="nad-producto.png" alt="NAD – Resveratrol + Colágeno"
+                     class="w-full h-full object-cover" />
+              </div>
+
+              <!-- Valoraciones -->
+              <div class="flex items-center gap-1 text-yellow-400 text-sm">
+                <span>★★★★★</span>
+                <span class="text-xs text-white/60 ml-1">(421 opiniones)</span>
+              </div>
+
+              <!-- Título + descripción corta -->
+              <div class="space-y-1 text-sm">
+                <p class="text-white/90 font-semibold">NAD · Resveratrol + Colágeno</p>
+                <p class="text-white/70 text-xs leading-relaxed">
+                  Resveratrol · Nicotinamida · Colágeno hidrolizado · Vitamina C · Zinc · Sabor uva.
+                </p>
+              </div>
+
+              <!-- Beneficios rápidos -->
+              <div class="grid grid-cols-2 gap-3 text-[11px] text-white/80">
+                <div class="rounded-xl border border-white/10 bg-white/5 p-3">• Más energía estable</div>
+                <div class="rounded-xl border border-white/10 bg-white/5 p-3">• Menos inflamación</div>
+                <div class="rounded-xl border border-white/10 bg-white/5 p-3">• Piel más sana</div>
+                <div class="rounded-xl border border-white/10 bg-white/5 p-3">• Soporte articular</div>
+              </div>
+
+              <!-- Bullets de autoridad -->
+              <ul class="text-[11px] text-white/60 space-y-1 mt-1">
+                <li>• Control de calidad por lote</li>
+                <li>• Fórmula usada por adultos de 25 a 60+ años</li>
+                <li>• Alta demanda en Colombia</li>
+              </ul>
+
+              <!-- CTA dentro del card -->
+              <a href="https://wa.me/573014361025?text=Hola,%20quiero%20comprar%20NAD"
+                 class="block text-center mt-4 bg-nadPurple px-4 py-3 rounded-full font-semibold text-sm shadow-xl hover:bg-nadPurpleSoft zoom-soft">
+                Comprar ahora
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PROBLEMA -->
+    <section id="problema" class="py-14 lg:py-16 bg-black/40 border-y border-white/10">
+      <div class="max-w-6xl mx-auto px-4 lg:px-0 flex flex-col lg:flex-row gap-10">
+
+        <div class="flex-1 space-y-4 text-center lg:text-left">
+          <h2 class="text-2xl md:text-3xl font-semibold">
+            ¿Sientes que tu cuerpo ya no responde igual?
+          </h2>
+          <p class="text-sm md:text-base text-white/75">
+            A partir de cierta edad, es normal sentir más cansancio, más rigidez y menos recuperación.
+            El problema es cuando eso te impide disfrutar lo que de verdad importa: tu trabajo, tu salud y tu familia.
+          </p>
+        </div>
+
+        <div class="flex-1 grid sm:grid-cols-2 gap-5 text-sm text-white/80">
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-4 space-y-2">
+            <p class="text-xs font-semibold text-white/60 uppercase">En tu día a día</p>
+            <ul class="space-y-1">
+              <li>• Te levantas cansado aunque duermas bien.</li>
+              <li>• La energía se agota a mitad de jornada.</li>
+              <li>• Sientes que “el cuerpo no rinde igual que antes”.</li>
+            </ul>
+          </div>
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-4 space-y-2">
+            <p class="text-xs font-semibold text-white/60 uppercase">En tu cuerpo</p>
+            <ul class="space-y-1">
+              <li>• Articulaciones con molestias o rigidez.</li>
+              <li>• Piel más apagada o con menos firmeza.</li>
+              <li>• Recuperación lenta después del esfuerzo o ejercicio.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CÓMO AYUDA NAD -->
+    <section id="como-ayuda" class="py-14 lg:py-16">
+      <div class="max-w-6xl mx-auto px-4 lg:px-0 space-y-8">
+
+        <div class="max-w-2xl text-center lg:text-left">
+          <h2 class="text-2xl md:text-3xl font-semibold mb-3">
+            ¿Qué hace NAD dentro de ese contexto?
+          </h2>
+          <p class="text-sm md:text-base text-white/80">
+            NAD no es una “píldora mágica”, es un aliado más. Su fórmula combina antioxidantes y soporte estructural
+            para acompañar procesos clave de energía, colágeno, articulaciones y sistema inmune, siempre junto a
+            hábitos saludables.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-4 gap-6 text-sm">
+          <!-- Resveratrol -->
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-4 space-y-2 zoom-soft">
+            <div class="flex items-center gap-2 text-nadPurpleSoft text-xs font-semibold uppercase">
+              <!-- Icono brillo -->
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 3l1.8 3.8L18 8.5l-3.1 2.9.7 4.2L12 14.7 8.4 15.6l.7-4.2L6 8.5l4.2-.7L12 3z"/>
+              </svg>
+              <span>Resveratrol</span>
+            </div>
+            <p class="text-white/75 text-xs">
+              Antioxidante que ayuda a contrarrestar el estrés oxidativo y a proteger tus células del desgaste diario.
+            </p>
+          </div>
+
+          <!-- Nicotinamida -->
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-4 space-y-2 zoom-soft">
+            <div class="flex items-center gap-2 text-nadPurpleSoft text-xs font-semibold uppercase">
+              <!-- Icono rayo -->
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M13 2L5 14h5l-1 8 8-12h-5l1-8z"/>
+              </svg>
+              <span>Nicotinamida</span>
+            </div>
+            <p class="text-white/75 text-xs">
+              Participa en rutas relacionadas con la producción de energía (NAD+), clave para sentirte más activo.
+            </p>
+          </div>
+
+          <!-- Colágeno -->
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-4 space-y-2 zoom-soft">
+            <div class="flex items-center gap-2 text-nadPurpleSoft text-xs font-semibold uppercase">
+              <!-- Icono gotas -->
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M7 4.5C5 7 3.5 9.3 3.5 11.5A4.5 4.5 0 0 0 12 13c0-2.2-1.5-4.5-3.5-8.5z"/>
+                <path d="M17 4.5c-2 2.5-3.5 4.8-3.5 7a4.5 4.5 0 0 0 9 0c0-2.2-1.5-4.5-3.5-7z"/>
+              </svg>
+              <span>Colágeno</span>
+            </div>
+            <p class="text-white/75 text-xs">
+              Acompaña el cuidado de piel, articulaciones y tejido conectivo, pilares de la movilidad y la apariencia.
+            </p>
+          </div>
+
+          <!-- Vitamina C + Zinc -->
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-4 space-y-2 zoom-soft">
+            <div class="flex items-center gap-2 text-nadPurpleSoft text-xs font-semibold uppercase">
+              <!-- Icono escudo -->
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 3l7 3v6.5c0 3.3-2.2 6.3-7 8.5-4.8-2.2-7-5.2-7-8.5V6l7-3z"/>
+              </svg>
+              <span>Vit C + Zinc</span>
+            </div>
+            <p class="text-white/75 text-xs">
+              Apoyo al sistema inmune y a la síntesis de colágeno, claves en la defensa y la regeneración.
+            </p>
+          </div>
+        </div>
+
+        <div class="text-center lg:text-left">
+          <a href="https://wa.me/573014361025"
+             class="inline-flex items-center rounded-full bg-nadLime px-6 py-3 text-xs md:text-sm font-semibold text-black shadow-lg hover:-translate-y-0.5 transition">
+            Quiero saber si NAD es para mí
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRANSFORMACIÓN -->
+    <section id="transformacion" class="py-14 lg:py-16 bg-black/40 border-y border-white/10">
+      <div class="max-w-6xl mx-auto px-4 lg:px-0 space-y-8">
+
+        <div class="max-w-xl text-center lg:text-left">
+          <h2 class="text-2xl md:text-3xl font-semibold mb-3">
+            Lo que muchas personas adultas buscan sentir
+          </h2>
+          <p class="text-sm md:text-base text-white/75">
+            Con uso constante (4–8 semanas), buenos hábitos de sueño, hidratación y algo de movimiento, muchas personas reportan:
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6 text-sm">
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-6">
+            <p class="text-xs font-semibold text-white/70 uppercase mb-3">ANTES</p>
+            <ul class="space-y-2 text-white/75">
+              <li>• Cansancio que aparece desde la mañana.</li>
+              <li>• Articulaciones rígidas o con molestias.</li>
+              <li>• Piel apagada o con menos firmeza.</li>
+              <li>• Cuesta recuperarse después del ejercicio o del día.</li>
+            </ul>
+          </div>
+          <div class="rounded-2xl border border-nadLime/50 bg-white/5 p-6">
+            <p class="text-xs font-semibold text-nadLime uppercase mb-3">DESPUÉS</p>
+            <ul class="space-y-2 text-white/85">
+              <li>• Sensación de mayor energía y claridad.</li>
+              <li>• Menos molestias y sensación de inflamación.</li>
+              <li>• Piel con mejor aspecto general.</li>
+              <li>• Recuperación más ligera tras el día o el gimnasio.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- OFERTA -->
+<section id="oferta" class="py-20 relative overflow-hidden">
+
+  <!-- Glow de fondo -->
+  <div class="absolute inset-0 -z-20">
+    <div class="absolute -top-40 right-0 h-72 w-72 bg-nadPurpleSoft/40 blur-[150px] rounded-full"></div>
+    <div class="absolute bottom-0 left-0 h-72 w-72 bg-nadLime/20 blur-[150px] rounded-full"></div>
+  </div>
+
+  <div class="max-w-6xl mx-auto px-4 lg:px-0 text-center">
+
+    <h2 class="text-3xl md:text-4xl font-semibold mb-3">
+      Oferta Especial de Lanzamiento NAD
+    </h2>
+
+    <p class="text-white/70 text-sm md:text-base max-w-xl mx-auto mb-10">
+      Aprovecha esta oferta limitada y recibe tu frasco con envío GRATIS en Colombia.
+    </p>
+
+    <!-- CARD EXTREMA -->
+    <div
+      class="relative max-w-5xl mx-auto rounded-3xl bg-white/10 backdrop-blur-2xl border border-white/10 shadow-2xl
+             p-6 md:p-10 overflow-hidden spotlight zoom-soft">
+
+      <!-- Glow interno -->
+      <div class="absolute inset-0 -z-10 bg-gradient-to-br from-nadPurple/20 via-transparent to-nadLime/10"></div>
+
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+
+        <!-- Imagen del producto -->
+        <div class="relative">
+          <!-- Badge -->
+          <span
+            class="absolute -top-3 -left-3 bg-red-500/90 text-white text-[10px] md:text-xs font-bold px-3 py-1 rounded-full shadow-lg uppercase tracking-wide">
+            Quedan pocos
+          </span>
+
+          <div class="rounded-2xl overflow-hidden bg-black/40 shadow-2xl border border-white/10">
+            <img src="nad-producto.png" alt="NAD – Resveratrol + Colágeno"
+              class="w-full h-full object-cover" />
+          </div>
+
+          <!-- Estrellas -->
+          <div class="flex items-center justify-center gap-1 mt-3 text-yellow-400 text-sm">
+            <span>★★★★★</span>
+            <span class="text-xs text-white/60 ml-1">(421 opiniones)</span>
+          </div>
+        </div>
+
+        <!-- INFO + PRECIO + LISTA + CTA -->
+        <div class="text-left space-y-6">
+
+          <h3 class="text-2xl md:text-3xl font-bold leading-tight">
+            Llévate tu frasco de <span class="text-nadLime">NAD</span> con envío incluido
+          </h3>
+
+          <!-- Precio -->
+          <div class="flex items-baseline gap-3">
+            <span class="text-sm md:text-base text-white/60 line-through">80.000 COP</span>
+            <span class="text-4xl md:text-5xl font-extrabold text-nadLime">69.900 COP</span>
+          </div>
+
+          <!-- Lista -->
+          <ul class="space-y-2 text-white/80 text-sm">
+            <li class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor"
+                   stroke-width="1.6" class="h-4 w-4 text-nadLime">
+                <path d="M20 6L9 17l-5-5"></path>
+              </svg>
+              Envío GRATIS en Apartadó
+            </li>
+
+            <li class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor"
+                   stroke-width="1.6" class="h-4 w-4 text-nadLime">
+                <path d="M20 6L9 17l-5-5"></path>
+              </svg>
+              Pago contra entrega disponible
+            </li>
+
+            <li class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor"
+                   stroke-width="1.6" class="h-4 w-4 text-nadLime">
+                <path d="M20 6L9 17l-5-5"></path>
+              </svg>
+              Registro INVIMA
+            </li>
+
+            <li class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor"
+                   stroke-width="1.6" class="h-4 w-4 text-nadLime">
+                <path d="M20 6L9 17l-5-5"></path>
+              </svg>
+              Fórmula de Resveratrol + Nicotinamida + Colágeno + Vit C + Zinc
+            </li>
+          </ul>
+
+          <!-- CTA -->
+          <a href="https://wa.me/573014391025?text=Hola,%20quiero%20comprar%20NAD"
+             class="inline-flex items-center justify-center w-full md:w-auto px-10 py-4 bg-nadPurple rounded-full
+                    text-sm md:text-base font-semibold shadow-xl hover:bg-nadPurpleSoft zoom-soft">
+            Quiero asegurar mi frasco
+          </a>
+
+          <!-- Nota -->
+          <p class="text-[11px] text-white/60 max-w-xs">
+            Lotes limitados. Cuando el lote actual se agota, el precio puede ajustarse según costos de producción.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- TESTIMONIOS -->
+    <section id="testimonios" class="py-16 bg-black/40 border-y border-white/10">
+      <div class="max-w-6xl mx-auto px-4 lg:px-0 space-y-8">
+
+        <div class="text-center lg:text-left">
+          <h2 class="text-2xl md:text-3xl font-semibold mb-2">
+            Personas que ya empezaron con NAD
+          </h2>
+          <p class="text-sm text-white/70">
+            Testimonios de uso constante, acompañando hábitos saludables.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6 text-sm">
+          <article class="rounded-2xl border border-white/10 bg-white/5 p-5 zoom-soft">
+            <p class="text-white/85">
+              “A las tres semanas sentí menos dolor en las rodillas y más ligereza en el día.
+              Además, la piel se me ve con mejor tono.”
+            </p>
+            <p class="mt-3 text-[11px] text-white/55">– María, 42 años</p>
+          </article>
+
+          <article class="rounded-2xl border border-white/10 bg-white/5 p-5 zoom-soft">
+            <p class="text-white/85">
+              “Lo uso junto al entrenamiento. Noto que me recupero más rápido y no me quedo tan sin energía al final del día.”
+            </p>
+            <p class="mt-3 text-[11px] text-white/55">– Julián, 31 años</p>
+          </article>
+
+          <article class="rounded-2xl border border-white/10 bg-white/5 p-5 zoom-soft">
+            <p class="text-white/85">
+              “Me ha ayudado con las articulaciones y me siento más activo. El sabor a uva hace que sea fácil de tomar a diario.”
+            </p>
+            <p class="mt-3 text-[11px] text-white/55">– Carlos, 27 años</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEGURIDAD / CONFIANZA -->
+    <section id="seguridad" class="py-16">
+      <div class="max-w-6xl mx-auto px-4 lg:px-0 space-y-8">
+
+        <div class="text-center lg:text-left">
+          <h2 class="text-2xl md:text-3xl font-semibold mb-3">
+            Seguridad y uso responsable primero
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6 text-sm">
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+            <p class="text-xs font-semibold text-white/60 uppercase mb-2">Calidad</p>
+            <p class="text-white/75">
+              Fórmula elaborada con ingredientes de alta pureza y controlados por lote.
+            </p>
+          </div>
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+            <p class="text-xs font-semibold text-white/60 uppercase mb-2">Compra segura</p>
+            <p class="text-white/75">
+              Pago contra entrega y acompañamiento directo por WhatsApp para que compres con tranquilidad.
+            </p>
+          </div>
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+            <p class="text-xs font-semibold text-white/60 uppercase mb-2">Uso responsable</p>
+            <p class="text-white/75">
+              NAD no reemplaza una alimentación equilibrada ni la recomendación de tu médico.
+              Si tienes una condición de salud o tomas medicamentos, consulta siempre con un profesional.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="py-20 text-center">
+      <div class="space-y-4 px-4">
+        <h2 class="text-2xl md:text-3xl font-semibold">
+          Estás a un mensaje de empezar a cuidar mejor tu energía y tu bienestar.
+        </h2>
+        <p class="text-sm md:text-base text-white/70 max-w-xl mx-auto">
+          Te ayudamos a resolver tus dudas y a tomar una decisión informada, sin compromiso.
+        </p>
+        <a href="https://wa.me/573014361025"
+           class="inline-flex items-center rounded-full bg-nadPurple px-10 py-4 text-sm font-semibold shadow-xl hover:bg-nadPurpleSoft transition zoom-soft">
+          Escribir ahora por WhatsApp
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- BOTÓN FLOTANTE WHATSAPP + MINI CHAT -->
+  <div id="whatsapp-container" class="fixed bottom-5 right-5 z-50 flex flex-col items-end">
+
+    <!-- Mini ventana -->
+    <div id="mini-chat"
+         class="hidden mb-3 w-64 bg-white/10 backdrop-blur-xl border border-white/20 text-white rounded-xl shadow-2xl p-4">
+      <div class="flex justify-between items-center mb-2">
+        <p class="text-sm font-semibold">¿Necesitas ayuda?</p>
+        <button onclick="toggleChat(false)" class="text-white/70 hover:text-white text-xl leading-none">&times;</button>
+      </div>
+
+      <p class="text-xs text-white/70 mb-3">
+        Estoy aquí para ayudarte a resolver dudas rápidamente sobre NAD.
+      </p>
+
+      <!-- Preguntas rápidas -->
+      <div class="space-y-2 text-[12px]">
+        <a href="https://wa.me/573014361025?text=Hola,%20quiero%20saber%20si%20NAD%20es%20para%20mi"
+           class="block bg-nadPurple/70 hover:bg-nadPurpleSoft transition px-3 py-2 rounded-md">
+          ¿NAD es adecuado para mí?
+        </a>
+
+        <a href="https://wa.me/573014361025?text=Hola,%20%C2%BFcu%C3%A1nto%20tiempo%20tarda%20en%20verse%20un%20cambio%20con%20NAD?"
+           class="block bg-nadPurple/70 hover:bg-nadPurpleSoft transition px-3 py-2 rounded-md">
+          ¿Cuándo se notan resultados?
+        </a>
+
+        <a href="https://wa.me/573014361025?text=Hola,%20quiero%20comprar%20NAD"
+           class="block bg-nadLime text-black font-semibold hover:bg-lime-300 transition px-3 py-2 rounded-md">
+          Comprar ahora
+        </a>
+      </div>
+    </div>
+
+    <!-- Botón flotante -->
+    <button onclick="toggleChat(true)"
+            class="h-14 w-14 rounded-full bg-green-500 flex items-center justify-center shadow-xl hover:scale-110 transition duration-300 relative">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="white"
+           viewBox="0 0 24 24" class="h-7 w-7">
+        <path d="M20.52 3.48A11.8 11.8 0 0 0 12 .25C5.63.25.5 5.38.5 11.77c0 2.08.55 4.1 1.6 5.89L.25 24l6.56-1.81a11.76 11.76 0 0 0 5.96 1.6h.01c6.39 0 11.52-5.13 11.52-11.52 0-3.08-1.2-5.98-3.28-8.06Z"/>
+      </svg>
+    </button>
+  </div>
+
+  <script>
+    const chat = document.getElementById("mini-chat");
+
+    function toggleChat(open) {
+      if (!chat) return;
+      if (open) {
+        chat.classList.remove("hidden");
+      } else {
+        chat.classList.add("hidden");
+      }
+    }
+  </script>
+
+</body>
+</html>
